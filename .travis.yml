@@ -1,7 +1,9 @@
+sudo: false
+cache: bundler
 language: ruby
 rvm:
 - 2.3.1
-install: bundle
-before_script:
-  - bundle exec danger
-script: bundle exec rspec
+install: bundle install
+script:
+  - bundle exec rspec
+  - bundle exec danger --verbose
